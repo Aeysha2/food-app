@@ -98,18 +98,18 @@ function AppContent() {
 
   // 3. Otherwise: SHOW CLIENT STOREFRONT (Customer view or Admin Preview)
   return (
-    <div className="min-h-screen flex flex-col bg-[#0b0f19] text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900 selection:bg-red-600/30 selection:text-amber-200">
       
       {/* Admin Preview Floating Header if admin is previewing client site */}
       {isAdmin && adminPreview && (
-        <div className="sticky top-0 z-50 bg-[#131b2e] text-slate-200 px-4 py-2.5 text-xs flex items-center justify-between border-b border-slate-800 shadow-md">
+        <div className="sticky top-0 z-50 bg-slate-50 text-slate-800 px-4 py-2.5 text-xs flex items-center justify-between border-b border-slate-200 shadow-md">
           <div className="flex items-center gap-2 font-bold">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
             <span>Mode Aperçu Client • Vous naviguez avec la vue client</span>
           </div>
           <button
             onClick={() => setAdminPreview(false)}
-            className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs shadow-xs transition-all cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-red-600 hover:bg-red-500 text-white font-black text-xs shadow-xs transition-all cursor-pointer"
           >
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Revenir au Dashboard Admin &rarr;</span>
@@ -147,9 +147,9 @@ function AppContent() {
         {/* Menu Section Header */}
         <div className="flex items-center justify-between mb-6 pt-4">
           <div>
-            <h2 className="text-2xl font-black tracking-tight text-slate-100 flex items-center gap-2">
+            <h2 className="text-2xl font-black tracking-tight text-slate-900 flex items-center gap-2">
               <span>Carte des Plats Gourmands</span>
-              <span className="text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 px-2.5 py-0.5 rounded-full">
+              <span className="text-xs font-bold bg-red-600/15 text-red-600 border border-red-600/30 px-2.5 py-0.5 rounded-full">
                 {menuItems.length} spécialités
               </span>
             </h2>
@@ -160,9 +160,9 @@ function AppContent() {
 
           <button
             onClick={loadMenu}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-800 bg-[#131b2e] hover:bg-slate-800 text-slate-300 text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-semibold shadow-xs transition-colors cursor-pointer"
           >
-            <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-amber-400' : ''}`} />
+            <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-red-500' : ''}`} />
             <span>Actualiser</span>
           </button>
         </div>
@@ -173,22 +173,22 @@ function AppContent() {
             {[1, 2, 3, 4, 5, 6].map((n) => (
               <div
                 key={n}
-                className="h-80 rounded-3xl bg-slate-900/60 animate-pulse border border-slate-800"
+                className="h-80 rounded-3xl bg-white/60 animate-pulse border border-slate-200"
               />
             ))}
           </div>
         ) : menuItems.length === 0 ? (
-          <div className="text-center py-16 bg-[#131b2e] rounded-3xl border border-slate-800 shadow-xs">
-            <div className="w-16 h-16 bg-slate-900 text-amber-400 rounded-2xl flex items-center justify-center mx-auto mb-3 text-3xl">
+          <div className="text-center py-16 bg-slate-50 rounded-3xl border border-slate-200 shadow-xs">
+            <div className="w-16 h-16 bg-white text-red-500 rounded-2xl flex items-center justify-center mx-auto mb-3 text-3xl">
               🔍
             </div>
-            <h3 className="text-base font-bold text-slate-100">Aucun plat correspondant trouvé</h3>
+            <h3 className="text-base font-bold text-slate-900">Aucun plat correspondant trouvé</h3>
             <p className="text-xs text-slate-400 mt-1 max-w-sm mx-auto">
               Nous n'avons pas trouvé de spécialité correspondant à vos filtres. Réinitialisez la recherche ou changez de catégorie.
             </p>
             <button
               onClick={() => { setSelectedCategory('All'); setSearchTerm(''); setVegOnly(false); }}
-              className="mt-4 px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold rounded-xl transition-all cursor-pointer"
+              className="mt-4 px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-xs font-bold rounded-xl transition-all cursor-pointer"
             >
               Réinitialiser les Filtres
             </button>
@@ -204,18 +204,18 @@ function AppContent() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#0f172a] text-slate-400 text-xs py-10 border-t border-slate-800/80 mt-auto">
+      <footer className="bg-white text-slate-400 text-xs py-10 border-t border-slate-200/80 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="text-lg">🍕</span>
-            <span className="font-black text-slate-200 text-sm">CraveDash Food Delivery</span>
+            <span className="font-black text-slate-800 text-sm">CraveDash Food Delivery</span>
             <span className="text-slate-600">|</span>
             <span>Plateforme Complète Full-Stack</span>
           </div>
 
           <div className="flex items-center gap-4 text-slate-400">
             <span>Serveur: <strong className="text-emerald-400">Express :5001</strong></span>
-            <span>Client: <strong className="text-amber-400">React + Vite :5173</strong></span>
+            <span>Client: <strong className="text-red-500">React + Vite :5173</strong></span>
           </div>
         </div>
       </footer>

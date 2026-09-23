@@ -55,19 +55,19 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 font-sans">
       {/* Backdrop */}
-      <div onClick={onClose} className="fixed inset-0 bg-slate-950/80 backdrop-blur-xs" />
+      <div onClick={onClose} className="fixed inset-0 bg-slate-100/80 backdrop-blur-xs" />
 
-      <div className="relative bg-[#131b2e] rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden border border-slate-800 text-slate-200">
+      <div className="relative bg-slate-50 rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden border border-slate-200 text-slate-800">
         
         {/* Header */}
-        <div className="p-5 bg-[#0f172a] border-b border-slate-800 text-slate-100 flex items-center justify-between">
+        <div className="p-5 bg-white border-b border-slate-200 text-slate-900 flex items-center justify-between">
           <div>
             <h2 className="text-lg font-black tracking-tight">Finaliser Votre Commande</h2>
             <p className="text-xs text-slate-400 mt-0.5">Livraison rapide garantie en 25–35 minutes</p>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-xl bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer"
+            className="p-1.5 rounded-xl bg-slate-50 text-slate-400 hover:text-white transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -83,8 +83,8 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
 
           {/* Delivery Address */}
           <div>
-            <label className="block text-xs font-bold text-slate-300 mb-1 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-amber-400" />
+            <label className="block text-xs font-bold text-slate-700 mb-1 flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-red-500" />
               <span>Adresse de Livraison *</span>
             </label>
             <input
@@ -93,14 +93,14 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="Ex: 12 Rue Saint-Honoré, Bâtiment B, Paris"
-              className="w-full px-3.5 py-2 text-xs rounded-xl bg-slate-900 border border-slate-700 text-slate-100 focus:border-amber-500/60 outline-none transition-all"
+              className="w-full px-3.5 py-2 text-xs rounded-xl bg-white border border-slate-300 text-slate-900 focus:border-red-600/60 outline-none transition-all"
             />
           </div>
 
           {/* Contact Number */}
           <div>
-            <label className="block text-xs font-bold text-slate-300 mb-1 flex items-center gap-1.5">
-              <Phone className="w-3.5 h-3.5 text-amber-400" />
+            <label className="block text-xs font-bold text-slate-700 mb-1 flex items-center gap-1.5">
+              <Phone className="w-3.5 h-3.5 text-red-500" />
               <span>Téléphone de Contact</span>
             </label>
             <input
@@ -108,13 +108,13 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="+33 6 00 00 00 00"
-              className="w-full px-3.5 py-2 text-xs rounded-xl bg-slate-900 border border-slate-700 text-slate-100 focus:border-amber-500/60 outline-none transition-all"
+              className="w-full px-3.5 py-2 text-xs rounded-xl bg-white border border-slate-300 text-slate-900 focus:border-red-600/60 outline-none transition-all"
             />
           </div>
 
           {/* Delivery Notes */}
           <div>
-            <label className="block text-xs font-bold text-slate-300 mb-1 flex items-center gap-1.5">
+            <label className="block text-xs font-bold text-slate-700 mb-1 flex items-center gap-1.5">
               <MessageSquare className="w-3.5 h-3.5 text-slate-400" />
               <span>Instructions pour le livreur (Optionnel)</span>
             </label>
@@ -123,13 +123,13 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Code porte, interphone, étage..."
-              className="w-full px-3.5 py-2 text-xs rounded-xl bg-slate-900 border border-slate-700 text-slate-100 focus:border-amber-500/60 outline-none transition-all"
+              className="w-full px-3.5 py-2 text-xs rounded-xl bg-white border border-slate-300 text-slate-900 focus:border-red-600/60 outline-none transition-all"
             />
           </div>
 
           {/* Payment Method Selector */}
           <div>
-            <label className="block text-xs font-bold text-slate-300 mb-2">
+            <label className="block text-xs font-bold text-slate-700 mb-2">
               Mode de Règlement
             </label>
             <div className="grid grid-cols-2 gap-2.5">
@@ -139,13 +139,13 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
                 onClick={() => setPaymentMethod('card')}
                 className={`p-3 rounded-2xl border text-left flex items-start gap-2.5 transition-all cursor-pointer ${
                   paymentMethod === 'card'
-                    ? 'border-amber-500/50 bg-amber-500/10'
-                    : 'border-slate-800 bg-slate-900/60 hover:border-slate-700'
+                    ? 'border-red-600/50 bg-red-600/10'
+                    : 'border-slate-200 bg-white/60 hover:border-slate-300'
                 }`}
               >
-                <CreditCard className={`w-4 h-4 mt-0.5 ${paymentMethod === 'card' ? 'text-amber-400' : 'text-slate-500'}`} />
+                <CreditCard className={`w-4 h-4 mt-0.5 ${paymentMethod === 'card' ? 'text-red-500' : 'text-slate-400'}`} />
                 <div>
-                  <div className="text-xs font-bold text-slate-100">Carte Bancaire</div>
+                  <div className="text-xs font-bold text-slate-900">Carte Bancaire</div>
                   <div className="text-[10px] text-slate-400">Paiement direct sécurisé</div>
                 </div>
               </button>
@@ -155,13 +155,13 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
                 onClick={() => setPaymentMethod('cod')}
                 className={`p-3 rounded-2xl border text-left flex items-start gap-2.5 transition-all cursor-pointer ${
                   paymentMethod === 'cod'
-                    ? 'border-amber-500/50 bg-amber-500/10'
-                    : 'border-slate-800 bg-slate-900/60 hover:border-slate-700'
+                    ? 'border-red-600/50 bg-red-600/10'
+                    : 'border-slate-200 bg-white/60 hover:border-slate-300'
                 }`}
               >
-                <Banknote className={`w-4 h-4 mt-0.5 ${paymentMethod === 'cod' ? 'text-amber-400' : 'text-slate-500'}`} />
+                <Banknote className={`w-4 h-4 mt-0.5 ${paymentMethod === 'cod' ? 'text-red-500' : 'text-slate-400'}`} />
                 <div>
-                  <div className="text-xs font-bold text-slate-100">Espèces / Livraison</div>
+                  <div className="text-xs font-bold text-slate-900">Espèces / Livraison</div>
                   <div className="text-[10px] text-slate-400">Paiement à la réception</div>
                 </div>
               </button>
@@ -170,10 +170,10 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
           </div>
 
           {/* Order Summary Recap */}
-          <div className="p-3.5 bg-slate-900/80 rounded-2xl border border-slate-800 text-xs space-y-1.5 text-slate-400">
+          <div className="p-3.5 bg-slate-100/80 rounded-2xl border border-slate-200 text-xs space-y-1.5 text-slate-400">
             <div className="flex justify-between">
               <span>Articles ({cartItems.length} plats)</span>
-              <span className="font-semibold text-slate-200">${subtotal.toFixed(2)}</span>
+              <span className="font-semibold text-slate-800">${subtotal.toFixed(2)}</span>
             </div>
             {discount > 0 && (
               <div className="flex justify-between text-emerald-400 font-medium">
@@ -183,11 +183,11 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
             )}
             <div className="flex justify-between">
               <span>Frais & Taxes</span>
-              <span className="font-semibold text-slate-200">${(tax + deliveryFee).toFixed(2)}</span>
+              <span className="font-semibold text-slate-800">${(tax + deliveryFee).toFixed(2)}</span>
             </div>
-            <div className="flex justify-between text-sm font-black text-slate-100 pt-1.5 border-t border-slate-800">
+            <div className="flex justify-between text-sm font-black text-slate-900 pt-1.5 border-t border-slate-200">
               <span>Montant Total</span>
-              <span className="text-amber-400">${grandTotal.toFixed(2)}</span>
+              <span className="text-red-500">${grandTotal.toFixed(2)}</span>
             </div>
           </div>
 
@@ -195,7 +195,7 @@ export const CheckoutModal = ({ isOpen, onClose, onOrderPlaced }) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 bg-amber-500 hover:bg-amber-400 disabled:opacity-50 text-slate-950 font-black text-xs rounded-2xl shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+            className="w-full py-3 bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white font-black text-xs rounded-2xl shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
           >
             {isSubmitting ? (
               <>

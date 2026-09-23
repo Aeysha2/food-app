@@ -265,24 +265,24 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
   });
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-200 flex flex-col md:flex-row font-sans selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="min-h-screen bg-white text-slate-800 flex flex-col md:flex-row font-sans selection:bg-red-600/30 selection:text-amber-200">
       
       {/* ======================================================== */}
       {/* MOBILE TOP BAR */}
       {/* ======================================================== */}
-      <div className="md:hidden bg-[#111827] border-b border-slate-800/80 px-4 py-3 flex items-center justify-between">
+      <div className="md:hidden bg-[#111827] border-b border-slate-200/80 px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center font-black">
+          <div className="w-9 h-9 rounded-xl bg-red-600/15 border border-red-600/30 text-red-500 flex items-center justify-center font-black">
             🍕
           </div>
           <div>
-            <span className="font-black text-sm text-slate-100">CraveDash</span>
-            <span className="text-[10px] text-amber-400 ml-1.5 font-bold uppercase tracking-wider">Admin</span>
+            <span className="font-black text-sm text-slate-900">CraveDash</span>
+            <span className="text-[10px] text-red-500 ml-1.5 font-bold uppercase tracking-wider">Admin</span>
           </div>
         </div>
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2 rounded-xl bg-slate-800 text-slate-300"
+          className="p-2 rounded-xl bg-slate-50 text-slate-700"
         >
           <MenuIcon className="w-5 h-5" />
         </button>
@@ -293,24 +293,24 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
       {/* ======================================================== */}
       <aside className={`
         ${mobileMenuOpen ? 'block' : 'hidden'} md:flex
-        w-full md:w-64 lg:w-72 bg-[#0f172a] border-r border-slate-800/80 flex-col justify-between shrink-0 md:sticky md:top-0 md:h-screen z-30
+        w-full md:w-64 lg:w-72 bg-white border-r border-slate-200/80 flex-col justify-between shrink-0 md:sticky md:top-0 md:h-screen z-30
       `}>
         
         {/* Top Branding */}
-        <div className="p-6 border-b border-slate-800/60">
+        <div className="p-6 border-b border-slate-200/60">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shadow-sm">
+            <div className="w-10 h-10 rounded-2xl bg-red-600/10 border border-red-600/30 flex items-center justify-center text-red-500 shadow-sm">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-base font-black text-slate-100 tracking-tight">CraveDash</span>
-                <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                <span className="text-base font-black text-slate-900 tracking-tight">CraveDash</span>
+                <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-red-600/20 text-red-600 border border-red-600/30">
                   Gérant
                 </span>
               </div>
               <div className="flex items-center gap-1.5 text-[11px] text-slate-400 mt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-whitemerald-400 animate-pulse" />
                 <span>Service Actif</span>
               </div>
             </div>
@@ -328,11 +328,11 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
             onClick={() => { setActiveTab('overview'); setMobileMenuOpen(false); }}
             className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-left ${
               activeTab === 'overview'
-                ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30 font-black shadow-xs'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                ? 'bg-red-600/15 text-red-600 border border-red-600/30 font-black shadow-xs'
+                : 'text-slate-400 hover:text-slate-800 hover:bg-slate-100/60'
             }`}
           >
-            <LayoutDashboard className="w-4 h-4 text-amber-400" />
+            <LayoutDashboard className="w-4 h-4 text-red-500" />
             <span>Vue d'ensemble</span>
           </button>
 
@@ -340,15 +340,15 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
             onClick={() => { setActiveTab('menu'); setMobileMenuOpen(false); }}
             className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-left ${
               activeTab === 'menu'
-                ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30 font-black shadow-xs'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                ? 'bg-red-600/15 text-red-600 border border-red-600/30 font-black shadow-xs'
+                : 'text-slate-400 hover:text-slate-800 hover:bg-slate-100/60'
             }`}
           >
             <div className="flex items-center gap-3">
-              <UtensilsCrossed className="w-4 h-4 text-amber-400" />
+              <UtensilsCrossed className="w-4 h-4 text-red-500" />
               <span>Menu & Produits</span>
             </div>
-            <span className="px-2 py-0.5 rounded-md bg-slate-800 text-[10px] font-bold text-slate-300">
+            <span className="px-2 py-0.5 rounded-md bg-slate-50 text-[10px] font-bold text-slate-700">
               {menuItems.length}
             </span>
           </button>
@@ -357,11 +357,11 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
             onClick={() => { setActiveTab('reports'); setMobileMenuOpen(false); }}
             className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-left ${
               activeTab === 'reports'
-                ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30 font-black shadow-xs'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                ? 'bg-red-600/15 text-red-600 border border-red-600/30 font-black shadow-xs'
+                : 'text-slate-400 hover:text-slate-800 hover:bg-slate-100/60'
             }`}
           >
-            <BarChart3 className="w-4 h-4 text-amber-400" />
+            <BarChart3 className="w-4 h-4 text-red-500" />
             <span>Rapports & Ventes</span>
           </button>
 
@@ -369,27 +369,27 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
             onClick={() => { setActiveTab('orders'); setMobileMenuOpen(false); }}
             className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-left ${
               activeTab === 'orders'
-                ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30 font-black shadow-xs'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                ? 'bg-red-600/15 text-red-600 border border-red-600/30 font-black shadow-xs'
+                : 'text-slate-400 hover:text-slate-800 hover:bg-slate-100/60'
             }`}
           >
             <div className="flex items-center gap-3">
-              <ShoppingBag className="w-4 h-4 text-amber-400" />
+              <ShoppingBag className="w-4 h-4 text-red-500" />
               <span>Commandes Cuisine</span>
             </div>
-            <span className="px-2 py-0.5 rounded-md bg-slate-800 text-[10px] font-bold text-slate-300">
+            <span className="px-2 py-0.5 rounded-md bg-slate-50 text-[10px] font-bold text-slate-700">
               {orders.length}
             </span>
           </button>
 
           {/* Quick shortcut to preview Client Storefront */}
           {onPreviewClientView && (
-            <div className="pt-4 mt-4 border-t border-slate-800/80">
+            <div className="pt-4 mt-4 border-t border-slate-200/80">
               <button
                 onClick={onPreviewClientView}
-                className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-amber-300 hover:bg-slate-800/50 transition-all cursor-pointer text-left border border-slate-800"
+                className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-red-600 hover:bg-slate-100/50 transition-all cursor-pointer text-left border border-slate-200"
               >
-                <Eye className="w-4 h-4 text-amber-400" />
+                <Eye className="w-4 h-4 text-red-500" />
                 <span>Aperçu Boutique Client</span>
               </button>
             </div>
@@ -398,14 +398,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
         </div>
 
         {/* Sidebar Footer: Profile & Logout */}
-        <div className="p-4 border-t border-slate-800/80 bg-slate-950/40">
+        <div className="p-4 border-t border-slate-200/80 bg-slate-100/40">
           <div className="flex items-center justify-between mb-3 px-1">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-xs text-amber-400">
+              <div className="w-8 h-8 rounded-xl bg-slate-50 border border-slate-300 flex items-center justify-center font-bold text-xs text-red-500">
                 {user?.name ? user.name.slice(0, 2).toUpperCase() : 'AD'}
               </div>
               <div className="overflow-hidden">
-                <div className="text-xs font-bold text-slate-200 truncate">{user?.name || 'Administrateur'}</div>
+                <div className="text-xs font-bold text-slate-800 truncate">{user?.name || 'Administrateur'}</div>
                 <div className="text-[10px] text-slate-400 truncate">{user?.email || 'admin@example.com'}</div>
               </div>
             </div>
@@ -413,7 +413,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
           <button
             onClick={logout}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-800/60 hover:bg-rose-500/10 text-slate-400 hover:text-rose-400 border border-slate-800 text-xs font-bold transition-all cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-50/60 hover:bg-rose-500/10 text-slate-400 hover:text-rose-400 border border-slate-200 text-xs font-bold transition-all cursor-pointer"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span>Se Déconnecter</span>
@@ -428,9 +428,9 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
       <div className="flex-1 flex flex-col min-w-0">
         
         {/* Top Minimalist Header Bar */}
-        <header className="sticky top-0 z-20 bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800/80 px-6 py-4 flex items-center justify-between">
+        <header className="sticky top-0 z-20 bg-white/90 backdrop-blur-md border-b border-slate-200/80 px-6 py-4 flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-black text-slate-100 tracking-tight">
+            <h1 className="text-lg font-black text-slate-900 tracking-tight">
               {activeTab === 'overview' && 'Tableau de Bord & Vue d\'ensemble'}
               {activeTab === 'menu' && 'Gestion du Menu & Produits'}
               {activeTab === 'reports' && 'Rubrique Rapports Financiers'}
@@ -448,10 +448,10 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
             <button
               onClick={loadData}
               disabled={loading}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800/70 hover:bg-slate-800 text-slate-300 text-xs font-semibold border border-slate-700/60 transition-all cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-50/70 hover:bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-300/60 transition-all cursor-pointer"
               title="Actualiser les données"
             >
-              <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-amber-400' : ''}`} />
+              <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-red-500' : ''}`} />
               <span className="hidden sm:inline">Actualiser</span>
             </button>
           </div>
@@ -459,7 +459,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
         {/* Notification Toast */}
         {statusMessage && (
-          <div className="mx-6 mt-4 p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold flex items-center justify-between">
+          <div className="mx-6 mt-4 p-3 rounded-2xl bg-whitemerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold flex items-center justify-between">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>{statusMessage}</span>
@@ -480,13 +480,13 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
             <div className="space-y-6">
               
               {/* Soft Welcome Card */}
-              <div className="p-6 sm:p-7 rounded-3xl bg-[#131b2e] border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+              <div className="p-6 sm:p-7 rounded-3xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                 <div className="space-y-1.5">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-bold">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-600/10 border border-red-600/20 text-red-600 text-xs font-bold">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>Restaurant Ouvert • CraveDash Manager</span>
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-black text-slate-100">
+                  <h2 className="text-xl sm:text-2xl font-black text-slate-900">
                     Bienvenue dans votre espace, {user?.name || 'Chef'}
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-400 max-w-xl leading-relaxed">
@@ -497,16 +497,16 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 <div className="flex items-center gap-3 shrink-0">
                   <button
                     onClick={handleOpenAddDish}
-                    className="flex items-center gap-1.5 px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-black rounded-xl shadow-sm transition-all cursor-pointer active:scale-95"
+                    className="flex items-center gap-1.5 px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white text-xs font-black rounded-xl shadow-sm transition-all cursor-pointer active:scale-95"
                   >
                     <Plus className="w-4 h-4" />
                     <span>Ajouter un Plat</span>
                   </button>
                   <button
                     onClick={() => setActiveTab('reports')}
-                    className="flex items-center gap-1.5 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl border border-slate-700 transition-all cursor-pointer"
+                    className="flex items-center gap-1.5 px-4 py-2.5 bg-slate-50 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl border border-slate-300 transition-all cursor-pointer"
                   >
-                    <BarChart3 className="w-4 h-4 text-amber-400" />
+                    <BarChart3 className="w-4 h-4 text-red-500" />
                     <span>Rapports</span>
                   </button>
                 </div>
@@ -515,14 +515,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
               {/* KPI Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 
-                <div className="p-5 rounded-2xl bg-[#131b2e] border border-slate-800/80 space-y-2">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">CA Aujourd'hui</span>
-                    <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-xl bg-whitemerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
                       <DollarSign className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="text-2xl font-black text-slate-100">
+                  <div className="text-2xl font-black text-slate-900">
                     ${reportData?.metrics?.totalRevenue ? reportData.metrics.totalRevenue.toFixed(2) : '203.51'}
                   </div>
                   <p className="text-[11px] text-slate-400">
@@ -530,14 +530,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#131b2e] border border-slate-800/80 space-y-2">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Commandes du Jour</span>
-                    <div className="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-xl bg-red-600/10 border border-red-600/20 text-red-500 flex items-center justify-center">
                       <ShoppingBag className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="text-2xl font-black text-slate-100">
+                  <div className="text-2xl font-black text-slate-900">
                     {reportData?.metrics?.totalOrders || 5}
                   </div>
                   <p className="text-[11px] text-slate-400">
@@ -545,14 +545,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#131b2e] border border-slate-800/80 space-y-2">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Plats au Menu</span>
-                    <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-xl bg-red-600/10 border border-red-600/20 text-red-500 flex items-center justify-center">
                       <UtensilsCrossed className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="text-2xl font-black text-slate-100">
+                  <div className="text-2xl font-black text-slate-900">
                     {menuItems.length}
                   </div>
                   <p className="text-[11px] text-slate-400">
@@ -560,14 +560,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#131b2e] border border-slate-800/80 space-y-2">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Plats en Rupture</span>
-                    <div className="w-8 h-8 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-xl bg-slate-50 border border-slate-300 text-slate-700 flex items-center justify-center">
                       <AlertTriangle className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="text-2xl font-black text-slate-100">
+                  <div className="text-2xl font-black text-slate-900">
                     {menuItems.filter(i => !i.isAvailable).length}
                   </div>
                   <p className="text-[11px] text-slate-400">
@@ -581,28 +581,28 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 
                 {/* Recent Orders */}
-                <div className="lg:col-span-7 p-6 rounded-3xl bg-[#131b2e] border border-slate-800/80 space-y-4">
+                <div className="lg:col-span-7 p-6 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-sm font-black text-slate-100">Dernières Commandes</h3>
+                      <h3 className="text-sm font-black text-slate-900">Dernières Commandes</h3>
                       <p className="text-xs text-slate-400">Activité récente en cuisine</p>
                     </div>
                     <button
                       onClick={() => setActiveTab('orders')}
-                      className="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer"
+                      className="text-xs font-bold text-red-500 hover:text-red-600 flex items-center gap-1 cursor-pointer"
                     >
                       <span>Voir tout ({orders.length})</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
 
-                  <div className="divide-y divide-slate-800/80">
+                  <div className="divide-y divide-slate-200/80">
                     {orders.slice(0, 4).map(o => (
                       <div key={o.id} className="py-3 flex items-center justify-between gap-4">
                         <div>
                           <div className="flex items-center gap-2">
-                            <span className="text-xs font-black text-amber-400">#{o.id}</span>
-                            <span className="text-xs font-semibold text-slate-200">• {o.customerName}</span>
+                            <span className="text-xs font-black text-red-500">#{o.id}</span>
+                            <span className="text-xs font-semibold text-slate-800">• {o.customerName}</span>
                           </div>
                           <p className="text-[11px] text-slate-400 mt-0.5 truncate max-w-xs">
                             {o.items?.map(it => `${it.quantity}x ${it.name}`).join(', ') || 'Plats variés'}
@@ -610,13 +610,13 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                         </div>
 
                         <div className="text-right shrink-0">
-                          <span className="text-xs font-black text-slate-100 block">
+                          <span className="text-xs font-black text-slate-900 block">
                             ${o.totalAmount.toFixed(2)}
                           </span>
                           <span className={`inline-block px-2 py-0.5 rounded-md text-[10px] font-bold ${
-                            o.status === 'Delivered' ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30' :
-                            o.status === 'Preparing Food' ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30' :
-                            'bg-indigo-500/15 text-indigo-300 border border-indigo-500/30'
+                            o.status === 'Delivered' ? 'bg-whitemerald-500/15 text-emerald-400 border border-emerald-500/30' :
+                            o.status === 'Preparing Food' ? 'bg-red-600/15 text-red-600 border border-red-600/30' :
+                            'bg-red-600/15 text-red-600 border border-red-600/30'
                           }`}>
                             {o.status}
                           </span>
@@ -627,15 +627,15 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 </div>
 
                 {/* Quick Menu Stock Status */}
-                <div className="lg:col-span-5 p-6 rounded-3xl bg-[#131b2e] border border-slate-800/80 space-y-4">
+                <div className="lg:col-span-5 p-6 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-sm font-black text-slate-100">Gestion Rapide des Stocks</h3>
+                      <h3 className="text-sm font-black text-slate-900">Gestion Rapide des Stocks</h3>
                       <p className="text-xs text-slate-400">Basculez la disponibilité en 1 clic</p>
                     </div>
                     <button
                       onClick={() => setActiveTab('menu')}
-                      className="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer"
+                      className="text-xs font-bold text-red-500 hover:text-red-600 flex items-center gap-1 cursor-pointer"
                     >
                       <span>Menu Complet</span>
                       <ChevronRight className="w-3.5 h-3.5" />
@@ -644,7 +644,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
                   <div className="space-y-2.5">
                     {menuItems.slice(0, 4).map(item => (
-                      <div key={item.id} className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+                      <div key={item.id} className="p-2.5 rounded-xl bg-white/60 border border-slate-200 flex items-center justify-between">
                         <div className="flex items-center gap-2.5">
                           <img
                             src={item.image}
@@ -652,7 +652,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                             className="w-9 h-9 rounded-lg object-cover"
                           />
                           <div>
-                            <span className="text-xs font-bold text-slate-200 block truncate max-w-[140px]">{item.name}</span>
+                            <span className="text-xs font-bold text-slate-800 block truncate max-w-[140px]">{item.name}</span>
                             <span className="text-[10px] text-slate-400">${item.price.toFixed(2)} • {item.category}</span>
                           </div>
                         </div>
@@ -661,7 +661,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                           onClick={() => handleToggleStock(item)}
                           className={`px-2.5 py-1 rounded-lg text-[10px] font-bold transition-all cursor-pointer ${
                             item.isAvailable
-                              ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/25'
+                              ? 'bg-whitemerald-500/15 text-emerald-400 border border-emerald-500/30 hover:bg-whitemerald-500/25'
                               : 'bg-rose-500/15 text-rose-400 border border-rose-500/30 hover:bg-rose-500/25'
                           }`}
                         >
@@ -684,9 +684,9 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
             <div className="space-y-6">
               
               {/* Header Bar */}
-              <div className="p-6 rounded-3xl bg-[#131b2e] border border-slate-800/80 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-lg font-black text-slate-100">Gestion des Plats & Boissons</h2>
+                  <h2 className="text-lg font-black text-slate-900">Gestion des Plats & Boissons</h2>
                   <p className="text-xs text-slate-400 mt-0.5">
                     Ajoutez de nouvelles recettes à la carte, modifiez les tarifs ou retirez des plats disponibles
                   </p>
@@ -694,7 +694,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
                 <button
                   onClick={handleOpenAddDish}
-                  className="flex items-center gap-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-black rounded-xl shadow-sm transition-all cursor-pointer active:scale-95 shrink-0"
+                  className="flex items-center gap-2 px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white text-xs font-black rounded-xl shadow-sm transition-all cursor-pointer active:scale-95 shrink-0"
                 >
                   <Plus className="w-4 h-4" />
                   <span>Ajouter un Plat</span>
@@ -702,7 +702,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
               </div>
 
               {/* Filters & Search */}
-              <div className="p-3.5 rounded-2xl bg-[#131b2e] border border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-3">
                 
                 {/* Category Pills */}
                 <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 scrollbar-none">
@@ -712,8 +712,8 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                       onClick={() => setMenuFilterCat(cat)}
                       className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer shrink-0 ${
                         menuFilterCat === cat
-                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                          : 'bg-slate-900/80 text-slate-400 hover:text-slate-200 border border-slate-800'
+                          ? 'bg-red-600/20 text-red-600 border border-red-600/40'
+                          : 'bg-slate-100/80 text-slate-400 hover:text-slate-800 border border-slate-200'
                       }`}
                     >
                       {cat}
@@ -723,13 +723,13 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
                 {/* Search */}
                 <div className="relative w-full sm:w-60">
-                  <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
                     value={menuSearch}
                     onChange={(e) => setMenuSearch(e.target.value)}
                     placeholder="Filtrer les plats..."
-                    className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 outline-none focus:border-amber-500/50"
+                    className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl bg-white/90 border border-slate-200 text-slate-800 outline-none focus:border-red-600/50"
                   />
                 </div>
 
@@ -740,20 +740,20 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 {filteredMenuItems.map(item => (
                   <div
                     key={item.id}
-                    className="rounded-3xl bg-[#131b2e] border border-slate-800/80 overflow-hidden flex flex-col justify-between hover:border-slate-700/80 transition-all"
+                    className="rounded-3xl bg-slate-50 border border-slate-200/80 overflow-hidden flex flex-col justify-between hover:border-slate-300/80 transition-all"
                   >
-                    <div className="relative h-44 w-full bg-slate-900 overflow-hidden">
+                    <div className="relative h-44 w-full bg-white overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.name}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute top-3 left-3 flex gap-1.5 flex-wrap">
-                        <span className="px-2.5 py-0.5 rounded-lg bg-slate-950/80 backdrop-blur-xs text-slate-200 text-[10px] font-bold border border-slate-700/60">
+                        <span className="px-2.5 py-0.5 rounded-lg bg-slate-100/80 backdrop-blur-xs text-slate-800 text-[10px] font-bold border border-slate-300/60">
                           {item.category}
                         </span>
                         {item.isVeg && (
-                          <span className="px-2 py-0.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[9px] font-bold uppercase">
+                          <span className="px-2 py-0.5 rounded-lg bg-whitemerald-500/20 text-emerald-300 border border-emerald-500/40 text-[9px] font-bold uppercase">
                             Végétarien 🌱
                           </span>
                         )}
@@ -764,7 +764,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                           onClick={() => handleToggleStock(item)}
                           className={`px-2.5 py-1 rounded-xl text-[11px] font-black backdrop-blur-xs transition-all cursor-pointer ${
                             item.isAvailable
-                              ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30'
+                              ? 'bg-whitemerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-whitemerald-500/30'
                               : 'bg-rose-500/20 text-rose-300 border border-rose-500/40 hover:bg-rose-500/30'
                           }`}
                         >
@@ -772,14 +772,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                         </button>
                       </div>
 
-                      <div className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-xs border border-slate-800 px-2.5 py-1 rounded-xl font-black text-amber-400 text-xs">
+                      <div className="absolute bottom-3 left-3 bg-slate-100/80 backdrop-blur-xs border border-slate-200 px-2.5 py-1 rounded-xl font-black text-red-500 text-xs">
                         ${item.price.toFixed(2)}
                       </div>
                     </div>
 
                     <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                       <div>
-                        <h3 className="text-sm font-black text-slate-100 leading-tight">
+                        <h3 className="text-sm font-black text-slate-900 leading-tight">
                           {item.name}
                         </h3>
                         <p className="text-xs text-slate-400 mt-1 line-clamp-2 leading-relaxed">
@@ -792,12 +792,12 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                       </div>
 
                       {/* Action buttons: Edit & Remove */}
-                      <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                      <div className="pt-3 border-t border-slate-200/80 flex items-center justify-between gap-2">
                         <button
                           onClick={() => handleOpenEditDish(item)}
-                          className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-slate-200 text-xs font-bold transition-colors cursor-pointer border border-slate-700/60"
+                          className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-50/60 hover:bg-slate-100 text-slate-800 text-xs font-bold transition-colors cursor-pointer border border-slate-300/60"
                         >
-                          <Edit3 className="w-3.5 h-3.5 text-amber-400" />
+                          <Edit3 className="w-3.5 h-3.5 text-red-500" />
                           <span>Modifier</span>
                         </button>
 
@@ -817,9 +817,9 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
               </div>
 
               {filteredMenuItems.length === 0 && (
-                <div className="text-center py-16 rounded-3xl bg-[#131b2e] border border-slate-800 text-slate-400">
+                <div className="text-center py-16 rounded-3xl bg-slate-50 border border-slate-200 text-slate-400">
                   <UtensilsCrossed className="w-10 h-10 text-slate-600 mx-auto mb-2" />
-                  <h4 className="text-sm font-bold text-slate-200">Aucun plat correspondant</h4>
+                  <h4 className="text-sm font-bold text-slate-800">Aucun plat correspondant</h4>
                   <p className="text-xs text-slate-400 mt-1">Ajustez vos filtres ou créez une nouvelle recette.</p>
                 </div>
               )}
@@ -834,12 +834,12 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
             <div className="space-y-6">
               
               {/* Period Selector & Tools */}
-              <div className="p-6 rounded-3xl bg-[#131b2e] border border-slate-800/80 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
                 
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <BarChart3 className="w-5 h-5 text-amber-400" />
-                    <h2 className="text-lg font-black text-slate-100">Rubrique Rapports & Statistiques</h2>
+                    <BarChart3 className="w-5 h-5 text-red-500" />
+                    <h2 className="text-lg font-black text-slate-900">Rubrique Rapports & Statistiques</h2>
                   </div>
                   <p className="text-xs text-slate-400">
                     Bilan d'activité et chiffre d'affaires par jour, mois ou année
@@ -847,13 +847,13 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 </div>
 
                 {/* Period Mode Selector (Daily, Monthly, Annual) */}
-                <div className="flex items-center gap-1 bg-slate-900 p-1.5 rounded-2xl border border-slate-800">
+                <div className="flex items-center gap-1 bg-white p-1.5 rounded-2xl border border-slate-200">
                   <button
                     onClick={() => setReportPeriod('daily')}
                     className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       reportPeriod === 'daily'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 font-black'
-                        : 'text-slate-400 hover:text-slate-200'
+                        ? 'bg-red-600/20 text-red-600 border border-red-600/40 font-black'
+                        : 'text-slate-400 hover:text-slate-800'
                     }`}
                   >
                     Journalier
@@ -862,8 +862,8 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                     onClick={() => setReportPeriod('monthly')}
                     className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       reportPeriod === 'monthly'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 font-black'
-                        : 'text-slate-400 hover:text-slate-200'
+                        ? 'bg-red-600/20 text-red-600 border border-red-600/40 font-black'
+                        : 'text-slate-400 hover:text-slate-800'
                     }`}
                   >
                     Mensuel
@@ -872,8 +872,8 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                     onClick={() => setReportPeriod('annual')}
                     className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       reportPeriod === 'annual'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 font-black'
-                        : 'text-slate-400 hover:text-slate-200'
+                        ? 'bg-red-600/20 text-red-600 border border-red-600/40 font-black'
+                        : 'text-slate-400 hover:text-slate-800'
                     }`}
                   >
                     Annuel
@@ -884,7 +884,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={handleExportCSV}
-                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-300 text-xs font-bold transition-all border border-slate-700/60 cursor-pointer"
+                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-50/80 hover:bg-slate-100 text-slate-700 text-xs font-bold transition-all border border-slate-300/60 cursor-pointer"
                     title="Télécharger les données en format CSV"
                   >
                     <Download className="w-3.5 h-3.5 text-emerald-400" />
@@ -893,10 +893,10 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
                   <button
                     onClick={handlePrint}
-                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-300 text-xs font-bold transition-all border border-slate-700/60 cursor-pointer"
+                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-50/80 hover:bg-slate-100 text-slate-700 text-xs font-bold transition-all border border-slate-300/60 cursor-pointer"
                     title="Imprimer ou enregistrer en PDF"
                   >
-                    <Printer className="w-3.5 h-3.5 text-amber-400" />
+                    <Printer className="w-3.5 h-3.5 text-red-500" />
                     <span>Imprimer</span>
                   </button>
                 </div>
@@ -904,18 +904,18 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
               </div>
 
               {/* Date Filter Bar */}
-              <div className="p-3.5 rounded-2xl bg-[#131b2e] border border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
+              <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
                 
                 <div className="flex items-center gap-2.5">
                   <Calendar className="w-4 h-4 text-slate-400" />
-                  <span className="text-xs font-semibold text-slate-300">Période ciblée :</span>
+                  <span className="text-xs font-semibold text-slate-700">Période ciblée :</span>
 
                   {reportPeriod === 'daily' && (
                     <input
                       type="date"
                       value={selectedDate}
                       onChange={(e) => setSelectedDate(e.target.value)}
-                      className="px-3 py-1 text-xs font-bold rounded-xl border border-slate-700 bg-slate-900 text-slate-200 outline-none focus:border-amber-500/50"
+                      className="px-3 py-1 text-xs font-bold rounded-xl border border-slate-300 bg-white text-slate-800 outline-none focus:border-red-600/50"
                     />
                   )}
 
@@ -924,7 +924,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                       type="month"
                       value={selectedMonth}
                       onChange={(e) => setSelectedMonth(e.target.value)}
-                      className="px-3 py-1 text-xs font-bold rounded-xl border border-slate-700 bg-slate-900 text-slate-200 outline-none focus:border-amber-500/50"
+                      className="px-3 py-1 text-xs font-bold rounded-xl border border-slate-300 bg-white text-slate-800 outline-none focus:border-red-600/50"
                     />
                   )}
 
@@ -932,7 +932,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                     <select
                       value={selectedYear}
                       onChange={(e) => setSelectedYear(e.target.value)}
-                      className="px-3 py-1 text-xs font-bold rounded-xl border border-slate-700 bg-slate-900 text-slate-200 outline-none focus:border-amber-500/50"
+                      className="px-3 py-1 text-xs font-bold rounded-xl border border-slate-300 bg-white text-slate-800 outline-none focus:border-red-600/50"
                     >
                       <option value="2026">Année 2026</option>
                       <option value="2025">Année 2025</option>
@@ -942,7 +942,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 </div>
 
                 <div className="text-xs text-slate-400">
-                  Affichage : <strong className="text-amber-300">
+                  Affichage : <strong className="text-red-600">
                     {reportPeriod === 'daily' ? `Journée du ${selectedDate}` :
                      reportPeriod === 'monthly' ? `Mois de ${selectedMonth}` :
                      `Année ${selectedYear}`}
@@ -955,14 +955,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
               {reportData && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   
-                  <div className="p-5 rounded-2xl bg-[#131b2e] border border-slate-800/80 space-y-1.5">
+                  <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Chiffre d'Affaires</span>
-                      <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-xl bg-whitemerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
                         <DollarSign className="w-4 h-4" />
                       </div>
                     </div>
-                    <div className="text-2xl font-black text-slate-100">
+                    <div className="text-2xl font-black text-slate-900">
                       ${reportData.metrics?.totalRevenue?.toFixed(2) || '0.00'}
                     </div>
                     <p className="text-[11px] text-slate-400">
@@ -970,14 +970,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                     </p>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-[#131b2e] border border-slate-800/80 space-y-1.5">
+                  <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Total Commandes</span>
-                      <div className="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-xl bg-red-600/10 border border-red-600/20 text-red-500 flex items-center justify-center">
                         <ShoppingBag className="w-4 h-4" />
                       </div>
                     </div>
-                    <div className="text-2xl font-black text-slate-100">
+                    <div className="text-2xl font-black text-slate-900">
                       {reportData.metrics?.totalOrders || 0}
                     </div>
                     <p className="text-[11px] text-slate-400">
@@ -985,14 +985,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                     </p>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-[#131b2e] border border-slate-800/80 space-y-1.5">
+                  <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Panier Moyen</span>
-                      <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-xl bg-red-600/10 border border-red-600/20 text-red-500 flex items-center justify-center">
                         <TrendingUp className="w-4 h-4" />
                       </div>
                     </div>
-                    <div className="text-2xl font-black text-slate-100">
+                    <div className="text-2xl font-black text-slate-900">
                       ${reportData.metrics?.averageOrderValue?.toFixed(2) || '0.00'}
                     </div>
                     <p className="text-[11px] text-slate-400">
@@ -1000,14 +1000,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                     </p>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-[#131b2e] border border-slate-800/80 space-y-1.5">
+                  <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Taux de Livraison</span>
-                      <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-xl bg-whitemerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
                         <CheckCircle2 className="w-4 h-4" />
                       </div>
                     </div>
-                    <div className="text-2xl font-black text-slate-100">
+                    <div className="text-2xl font-black text-slate-900">
                       {reportData.metrics?.totalOrders > 0
                         ? Math.round(((reportData.metrics?.deliveredCount || 0) / reportData.metrics.totalOrders) * 100)
                         : 100}%
@@ -1022,10 +1022,10 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
               {/* Bar Chart Visualization */}
               {reportData && reportData.timeline && reportData.timeline.length > 0 && (
-                <div className="p-6 rounded-3xl bg-[#131b2e] border border-slate-800/80 space-y-3">
+                <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-3">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-sm font-black text-slate-100">
+                      <h3 className="text-sm font-black text-slate-900">
                         {reportPeriod === 'daily' ? 'Tranches Horaires des Ventes (8h à 23h)' :
                          reportPeriod === 'monthly' ? 'Évolution Jour par Jour dans le Mois' :
                          'Évolution Mensuelle du Chiffre d\'Affaires (12 Mois)'}
@@ -1046,15 +1046,15 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                             const hasSales = (point.revenue || 0) > 0;
                             return (
                               <div key={idx} className="flex-1 min-w-[28px] sm:min-w-[34px] flex flex-col items-center gap-1.5 group">
-                                <span className="text-[9px] font-bold text-amber-300 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                <span className="text-[9px] font-bold text-red-600 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                                   ${point.revenue ? point.revenue.toFixed(0) : 0}
                                 </span>
                                 <div
                                   style={{ height: `${heightPct}%` }}
                                   className={`w-full rounded-t-lg transition-all ${
                                     hasSales
-                                      ? 'bg-amber-500/80 group-hover:bg-amber-400'
-                                      : 'bg-slate-800/60 group-hover:bg-slate-700/60'
+                                      ? 'bg-red-600/80 group-hover:bg-red-500'
+                                      : 'bg-slate-50/60 group-hover:bg-slate-200/60'
                                   }`}
                                   title={`${point.label}: $${point.revenue || 0} (${point.count || 0} commandes)`}
                                 />
@@ -1076,13 +1076,13 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                   
                   {/* Top Selling Dishes */}
-                  <div className="lg:col-span-6 p-6 rounded-3xl bg-[#131b2e] border border-slate-800/80 space-y-4">
+                  <div className="lg:col-span-6 p-6 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4">
                     <div className="flex items-center justify-between">
                       <div>
-                        <h3 className="text-sm font-black text-slate-100">Top Plats les Plus Commandés</h3>
+                        <h3 className="text-sm font-black text-slate-900">Top Plats les Plus Commandés</h3>
                         <p className="text-xs text-slate-400">Classement par volume de ventes</p>
                       </div>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-red-600/15 text-red-600 border border-red-600/30">
                         Succès Carte
                       </span>
                     </div>
@@ -1090,22 +1090,22 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                     <div className="space-y-2.5">
                       {reportData.topDishes && reportData.topDishes.length > 0 ? (
                         reportData.topDishes.map((dish, i) => (
-                          <div key={i} className="flex items-center justify-between p-2.5 rounded-2xl bg-slate-900/70 border border-slate-800">
+                          <div key={i} className="flex items-center justify-between p-2.5 rounded-2xl bg-white/70 border border-slate-200">
                             <div className="flex items-center gap-3">
-                              <span className="w-6 h-6 rounded-lg bg-slate-800 text-amber-400 text-xs font-black flex items-center justify-center">
+                              <span className="w-6 h-6 rounded-lg bg-slate-50 text-red-500 text-xs font-black flex items-center justify-center">
                                 #{i + 1}
                               </span>
                               {dish.image && (
                                 <img src={dish.image} alt={dish.name} className="w-10 h-10 rounded-xl object-cover" />
                               )}
                               <div>
-                                <span className="text-xs font-bold text-slate-200 block truncate max-w-[150px] sm:max-w-xs">{dish.name}</span>
+                                <span className="text-xs font-bold text-slate-800 block truncate max-w-[150px] sm:max-w-xs">{dish.name}</span>
                                 <span className="text-[10px] text-slate-400">{dish.category} • ${dish.price?.toFixed(2)}</span>
                               </div>
                             </div>
 
                             <div className="text-right shrink-0">
-                              <span className="text-xs font-black text-slate-100 block">
+                              <span className="text-xs font-black text-slate-900 block">
                                 {dish.quantity} vendus
                               </span>
                               <span className="text-[11px] font-bold text-emerald-400">
@@ -1121,9 +1121,9 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                   </div>
 
                   {/* Category Breakdown */}
-                  <div className="lg:col-span-6 p-6 rounded-3xl bg-[#131b2e] border border-slate-800/80 space-y-4">
+                  <div className="lg:col-span-6 p-6 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4">
                     <div>
-                      <h3 className="text-sm font-black text-slate-100">Répartition par Catégorie</h3>
+                      <h3 className="text-sm font-black text-slate-900">Répartition par Catégorie</h3>
                       <p className="text-xs text-slate-400">Contribution au chiffre d'affaires total</p>
                     </div>
 
@@ -1131,14 +1131,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                       {reportData.categoryBreakdown && reportData.categoryBreakdown.length > 0 ? (
                         reportData.categoryBreakdown.map((cat, i) => (
                           <div key={i} className="space-y-1">
-                            <div className="flex justify-between text-xs font-bold text-slate-300">
+                            <div className="flex justify-between text-xs font-bold text-slate-700">
                               <span>{cat.category}</span>
-                              <span className="text-amber-300">${cat.revenue.toFixed(2)} ({cat.percentage}%)</span>
+                              <span className="text-red-600">${cat.revenue.toFixed(2)} ({cat.percentage}%)</span>
                             </div>
-                            <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                            <div className="w-full h-2 bg-slate-50 rounded-full overflow-hidden">
                               <div
                                 style={{ width: `${Math.min(100, Math.max(4, cat.percentage))}%` }}
-                                className="h-full bg-amber-500/80 rounded-full"
+                                className="h-full bg-red-600/80 rounded-full"
                               />
                             </div>
                           </div>
@@ -1150,14 +1150,14 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
                     {/* Payment methods */}
                     {reportData.metrics?.paymentMethods && (
-                      <div className="pt-4 border-t border-slate-800/80">
+                      <div className="pt-4 border-t border-slate-200/80">
                         <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
                           Moyens de Paiement
                         </h4>
                         <div className="grid grid-cols-3 gap-2 text-center text-xs">
                           {Object.entries(reportData.metrics.paymentMethods).map(([pm, count]) => (
-                            <div key={pm} className="p-2 rounded-xl bg-slate-900/60 border border-slate-800">
-                              <div className="font-black text-slate-100">{count}</div>
+                            <div key={pm} className="p-2 rounded-xl bg-white/60 border border-slate-200">
+                              <div className="font-black text-slate-900">{count}</div>
                               <div className="text-[10px] text-slate-400 truncate">{pm}</div>
                             </div>
                           ))}
@@ -1172,9 +1172,9 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
               {/* Order Journal Table */}
               {reportData && reportData.orders && (
-                <div className="rounded-3xl bg-[#131b2e] border border-slate-800/80 overflow-hidden">
-                  <div className="p-5 border-b border-slate-800/80">
-                    <h3 className="text-sm font-black text-slate-100">
+                <div className="rounded-3xl bg-slate-50 border border-slate-200/80 overflow-hidden">
+                  <div className="p-5 border-b border-slate-200/80">
+                    <h3 className="text-sm font-black text-slate-900">
                       Journal Comptable des Commandes ({reportData.orders.length})
                     </h3>
                     <p className="text-xs text-slate-400">
@@ -1184,7 +1184,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
                   <div className="overflow-x-auto">
                     <table className="w-full text-left text-xs">
-                      <thead className="bg-slate-900/80 text-slate-400 font-bold uppercase tracking-wider text-[10px]">
+                      <thead className="bg-slate-100/80 text-slate-400 font-bold uppercase tracking-wider text-[10px]">
                         <tr>
                           <th className="py-3 px-5">ID</th>
                           <th className="py-3 px-4">Date & Heure</th>
@@ -1195,10 +1195,10 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                           <th className="py-3 px-5">Statut</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-slate-800/60">
+                      <tbody className="divide-y divide-slate-200/60">
                         {reportData.orders.map(o => (
                           <tr key={o.id} className="hover:bg-slate-850/50 transition-colors">
-                            <td className="py-3 px-5 font-black text-amber-400">#{o.id}</td>
+                            <td className="py-3 px-5 font-black text-red-500">#{o.id}</td>
                             <td className="py-3 px-4 text-slate-400 whitespace-nowrap">
                               {new Date(o.createdAt).toLocaleString('fr-FR', {
                                 day: '2-digit',
@@ -1208,13 +1208,13 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                                 minute: '2-digit'
                               })}
                             </td>
-                            <td className="py-3 px-4 font-semibold text-slate-200">
+                            <td className="py-3 px-4 font-semibold text-slate-800">
                               {o.customerName || 'Client'}
                             </td>
                             <td className="py-3 px-4 text-slate-400 max-w-xs truncate">
                               {o.items?.map(it => `${it.quantity}x ${it.name}`).join(', ') || '-'}
                             </td>
-                            <td className="py-3 px-4 font-black text-slate-100">
+                            <td className="py-3 px-4 font-black text-slate-900">
                               ${o.totalAmount.toFixed(2)}
                             </td>
                             <td className="py-3 px-4 text-slate-400 text-[11px]">
@@ -1222,9 +1222,9 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                             </td>
                             <td className="py-3 px-5">
                               <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold ${
-                                o.status === 'Delivered' ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30' :
-                                o.status === 'Preparing Food' ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30' :
-                                'bg-indigo-500/15 text-indigo-300 border border-indigo-500/30'
+                                o.status === 'Delivered' ? 'bg-whitemerald-500/15 text-emerald-400 border border-emerald-500/30' :
+                                o.status === 'Preparing Food' ? 'bg-red-600/15 text-red-600 border border-red-600/30' :
+                                'bg-red-600/15 text-red-600 border border-red-600/30'
                               }`}>
                                 {o.status}
                               </span>
@@ -1246,16 +1246,16 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
           {activeTab === 'orders' && (
             <div className="space-y-6">
               
-              <div className="p-6 rounded-3xl bg-[#131b2e] border border-slate-800/80 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-lg font-black text-slate-100">Commandes en Cuisine & Livraisons</h2>
+                  <h2 className="text-lg font-black text-slate-900">Commandes en Cuisine & Livraisons</h2>
                   <p className="text-xs text-slate-400 mt-0.5">
                     Modifiez le statut en direct au fur et à mesure de la préparation et de l'acheminement
                   </p>
                 </div>
 
                 <div className="text-xs font-semibold text-slate-400">
-                  Total : <strong className="text-amber-400">{orders.length} commandes</strong>
+                  Total : <strong className="text-red-500">{orders.length} commandes</strong>
                 </div>
               </div>
 
@@ -1263,12 +1263,12 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 {orders.map(o => (
                   <div
                     key={o.id}
-                    className="p-5 rounded-3xl bg-[#131b2e] border border-slate-800/80 space-y-4 hover:border-slate-700/80 transition-all"
+                    className="p-5 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4 hover:border-slate-300/80 transition-all"
                   >
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-3">
-                        <span className="text-xs font-black text-amber-400">#{o.id}</span>
-                        <span className="text-xs font-bold text-slate-200">
+                        <span className="text-xs font-black text-red-500">#{o.id}</span>
+                        <span className="text-xs font-bold text-slate-800">
                           {o.customerName}
                         </span>
                         <span className="text-xs text-slate-400">
@@ -1277,22 +1277,22 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <span className="text-base font-black text-slate-100">
+                        <span className="text-base font-black text-slate-900">
                           ${o.totalAmount.toFixed(2)}
                         </span>
                         <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold ${
-                          o.status === 'Delivered' ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30' :
-                          o.status === 'Preparing Food' ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30' :
-                          o.status === 'Out for Delivery' ? 'bg-indigo-500/15 text-indigo-300 border border-indigo-500/30' :
-                          'bg-slate-800 text-slate-300 border border-slate-700'
+                          o.status === 'Delivered' ? 'bg-whitemerald-500/15 text-emerald-400 border border-emerald-500/30' :
+                          o.status === 'Preparing Food' ? 'bg-red-600/15 text-red-600 border border-red-600/30' :
+                          o.status === 'Out for Delivery' ? 'bg-red-600/15 text-red-600 border border-red-600/30' :
+                          'bg-slate-50 text-slate-700 border border-slate-300'
                         }`}>
                           {o.status}
                         </span>
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5 text-xs">
-                      <div className="font-bold text-slate-200">
+                    <div className="p-3.5 rounded-2xl bg-slate-100/80 border border-slate-200 space-y-1.5 text-xs">
+                      <div className="font-bold text-slate-800">
                         Articles : {o.items?.map(it => `${it.quantity}x ${it.name} ($${it.price})`).join(' • ')}
                       </div>
                       <div className="text-slate-400 flex flex-wrap gap-4 text-[11px]">
@@ -1302,7 +1302,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between flex-wrap gap-2 pt-1 border-t border-slate-800/60">
+                    <div className="flex items-center justify-between flex-wrap gap-2 pt-1 border-t border-slate-200/60">
                       <span className="text-xs font-semibold text-slate-400">
                         Changer le statut :
                       </span>
@@ -1314,8 +1314,8 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                             onClick={() => handleUpdateOrderStatus(o.id, st)}
                             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                               o.status === st
-                                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-xs'
-                                : 'bg-slate-900/90 text-slate-400 hover:text-slate-200 border border-slate-800'
+                                ? 'bg-red-600/20 text-red-600 border border-red-600/40 shadow-xs'
+                                : 'bg-white/90 text-slate-400 hover:text-slate-800 border border-slate-200'
                             }`}
                           >
                             {st === 'Order Placed' ? 'Reçue' :
@@ -1343,13 +1343,13 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
       {/* ======================================================== */}
       {isDishModalOpen && (
         <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
-          <div onClick={() => setIsDishModalOpen(false)} className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm" />
+          <div onClick={() => setIsDishModalOpen(false)} className="fixed inset-0 bg-slate-100/80 backdrop-blur-sm" />
 
-          <div className="relative bg-[#131b2e] rounded-3xl max-w-xl w-full shadow-2xl overflow-hidden border border-slate-800 text-slate-200">
+          <div className="relative bg-slate-50 rounded-3xl max-w-xl w-full shadow-2xl overflow-hidden border border-slate-200 text-slate-800">
             
-            <div className="p-6 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+            <div className="p-6 bg-white/90 border-b border-slate-200 flex items-center justify-between">
               <div>
-                <h3 className="text-base font-black text-slate-100">
+                <h3 className="text-base font-black text-slate-900">
                   {editingItem ? 'Modifier la Recette' : 'Ajouter un Plat au Menu'}
                 </h3>
                 <p className="text-xs text-slate-400 mt-0.5">
@@ -1358,7 +1358,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
               </div>
               <button
                 onClick={() => setIsDishModalOpen(false)}
-                className="p-1.5 rounded-xl bg-slate-800 text-slate-400 hover:text-white transition-colors"
+                className="p-1.5 rounded-xl bg-slate-50 text-slate-400 hover:text-white transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -1368,23 +1368,23 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="sm:col-span-2">
-                  <label className="block font-bold text-slate-300 mb-1">Nom du Plat *</label>
+                  <label className="block font-bold text-slate-700 mb-1">Nom du Plat *</label>
                   <input
                     type="text"
                     required
                     value={dishForm.name}
                     onChange={(e) => setDishForm({ ...dishForm, name: e.target.value })}
                     placeholder="Ex: Burger Truffe & Champignons"
-                    className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 outline-none focus:border-amber-500/60 font-semibold"
+                    className="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 outline-none focus:border-red-600/60 font-semibold"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-bold text-slate-300 mb-1">Catégorie *</label>
+                  <label className="block font-bold text-slate-700 mb-1">Catégorie *</label>
                   <select
                     value={dishForm.category}
                     onChange={(e) => setDishForm({ ...dishForm, category: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 outline-none focus:border-amber-500/60 font-semibold"
+                    className="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 outline-none focus:border-red-600/60 font-semibold"
                   >
                     <option value="Burgers">Burgers</option>
                     <option value="Pizza">Pizza</option>
@@ -1397,7 +1397,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 </div>
 
                 <div>
-                  <label className="block font-bold text-slate-300 mb-1">Prix ($) *</label>
+                  <label className="block font-bold text-slate-700 mb-1">Prix ($) *</label>
                   <input
                     type="number"
                     step="0.01"
@@ -1405,23 +1405,23 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                     value={dishForm.price}
                     onChange={(e) => setDishForm({ ...dishForm, price: e.target.value })}
                     placeholder="14.99"
-                    className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 outline-none focus:border-amber-500/60 font-semibold"
+                    className="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 outline-none focus:border-red-600/60 font-semibold"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-bold text-slate-300 mb-1">Temps de Préparation</label>
+                  <label className="block font-bold text-slate-700 mb-1">Temps de Préparation</label>
                   <input
                     type="text"
                     value={dishForm.prepTime}
                     onChange={(e) => setDishForm({ ...dishForm, prepTime: e.target.value })}
                     placeholder="15-20 min"
-                    className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 outline-none focus:border-amber-500/60"
+                    className="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 outline-none focus:border-red-600/60"
                   />
                 </div>
 
                 <div className="flex items-center pt-5">
-                  <label className="flex items-center gap-2 cursor-pointer font-bold text-slate-300">
+                  <label className="flex items-center gap-2 cursor-pointer font-bold text-slate-700">
                     <input
                       type="checkbox"
                       checked={dishForm.isVeg}
@@ -1433,25 +1433,25 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block font-bold text-slate-300 mb-1">Description & Ingrédients</label>
+                  <label className="block font-bold text-slate-700 mb-1">Description & Ingrédients</label>
                   <textarea
                     rows={2}
                     value={dishForm.description}
                     onChange={(e) => setDishForm({ ...dishForm, description: e.target.value })}
                     placeholder="Notes culinaires, ingrédients frais..."
-                    className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 outline-none focus:border-amber-500/60"
+                    className="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 outline-none focus:border-red-600/60"
                   />
                 </div>
 
                 {/* Photo Gallery Picker */}
                 <div className="sm:col-span-2 space-y-2">
-                  <label className="block font-bold text-slate-300">Image du Plat (URL)</label>
+                  <label className="block font-bold text-slate-700">Image du Plat (URL)</label>
                   <input
                     type="url"
                     value={dishForm.image}
                     onChange={(e) => setDishForm({ ...dishForm, image: e.target.value })}
                     placeholder="https://images.unsplash.com/..."
-                    className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 outline-none focus:border-amber-500/60"
+                    className="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 outline-none focus:border-red-600/60"
                   />
 
                   <div className="pt-1">
@@ -1465,7 +1465,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                           type="button"
                           onClick={() => setDishForm({ ...dishForm, image: s.url })}
                           className={`relative h-12 rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
-                            dishForm.image === s.url ? 'border-amber-500 scale-95' : 'border-transparent opacity-70 hover:opacity-100'
+                            dishForm.image === s.url ? 'border-red-600 scale-95' : 'border-transparent opacity-70 hover:opacity-100'
                           }`}
                         >
                           <img src={s.url} alt={s.label} className="w-full h-full object-cover" />
@@ -1477,7 +1477,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
 
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex items-center justify-end gap-3">
+              <div className="pt-4 border-t border-slate-200 flex items-center justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setIsDishModalOpen(false)}
@@ -1487,7 +1487,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black shadow-sm transition-all cursor-pointer"
+                  className="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black shadow-sm transition-all cursor-pointer"
                 >
                   {editingItem ? 'Enregistrer les Modifications' : 'Ajouter le Plat'}
                 </button>
@@ -1504,15 +1504,15 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
       {/* ======================================================== */}
       {itemToDelete && (
         <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
-          <div onClick={() => setItemToDelete(null)} className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm" />
+          <div onClick={() => setItemToDelete(null)} className="fixed inset-0 bg-slate-100/80 backdrop-blur-sm" />
 
-          <div className="relative bg-[#131b2e] rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-800 text-center space-y-4">
+          <div className="relative bg-slate-50 rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 text-center space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center mx-auto">
               <Trash2 className="w-6 h-6" />
             </div>
 
             <div>
-              <h3 className="text-base font-black text-slate-100">
+              <h3 className="text-base font-black text-slate-900">
                 Retirer ce plat du menu ?
               </h3>
               <p className="text-xs text-slate-400 mt-1">
@@ -1523,7 +1523,7 @@ export const AdminDashboard = ({ onPreviewClientView, onMenuUpdated }) => {
             <div className="flex items-center gap-2 pt-2">
               <button
                 onClick={() => setItemToDelete(null)}
-                className="flex-1 py-2.5 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold hover:bg-slate-700 transition-colors cursor-pointer"
+                className="flex-1 py-2.5 rounded-xl bg-slate-50 text-slate-700 text-xs font-bold hover:bg-slate-200 transition-colors cursor-pointer"
               >
                 Annuler
               </button>

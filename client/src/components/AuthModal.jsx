@@ -33,12 +33,12 @@ export const AuthModal = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div onClick={onClose} className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs" />
+      <div onClick={onClose} className="fixed inset-0 bg-white/60 backdrop-blur-xs" />
 
       <div className="relative bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden border border-slate-200">
         
         {/* Header */}
-        <div className="p-6 bg-gradient-to-r from-rose-500 to-amber-500 text-white flex items-center justify-between">
+        <div className="p-6 bg-gradient-to-r from-rose-500 to-red-600 text-white flex items-center justify-between">
           <div>
             <h2 className="text-xl font-black tracking-tight">
               {mode === 'login' ? 'Welcome Back! 👋' : 'Join CraveDash 🚀'}
@@ -60,7 +60,7 @@ export const AuthModal = ({ isOpen, onClose }) => {
           <button
             onClick={() => { setMode('login'); setAuthError(null); }}
             className={`flex-1 py-3 border-b-2 transition-all ${
-              mode === 'login' ? 'border-rose-500 text-rose-600 bg-white' : 'border-transparent text-slate-500'
+              mode === 'login' ? 'border-rose-500 text-rose-600 bg-white' : 'border-transparent text-slate-400'
             }`}
           >
             Sign In
@@ -68,7 +68,7 @@ export const AuthModal = ({ isOpen, onClose }) => {
           <button
             onClick={() => { setMode('register'); setAuthError(null); }}
             className={`flex-1 py-3 border-b-2 transition-all ${
-              mode === 'register' ? 'border-rose-500 text-rose-600 bg-white' : 'border-transparent text-slate-500'
+              mode === 'register' ? 'border-rose-500 text-rose-600 bg-white' : 'border-transparent text-slate-400'
             }`}
           >
             Create Account
@@ -76,23 +76,23 @@ export const AuthModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* 1-Click Demo Logins */}
-        <div className="p-5 bg-amber-50/50 border-b border-amber-100/60">
+        <div className="p-5 bg-slate-50mber-50/50 border-b border-amber-100/60">
           <div className="flex items-center gap-1.5 text-xs font-bold text-amber-900 mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+            <Sparkles className="w-3.5 h-3.5 text-red-600" />
             <span>Instant Demo Access (No Typing Needed):</span>
           </div>
           <div className="grid grid-cols-2 gap-2">
             <button
               onClick={() => handleDemo('user')}
               type="button"
-              className="px-3 py-2 bg-white hover:bg-amber-100/50 border border-amber-200 text-amber-900 text-xs font-bold rounded-xl shadow-2xs transition-all active:scale-95 text-left"
+              className="px-3 py-2 bg-white hover:bg-slate-100mber-100/50 border border-amber-200 text-amber-900 text-xs font-bold rounded-xl shadow-2xs transition-all active:scale-95 text-left"
             >
               👤 Demo Customer
             </button>
             <button
               onClick={() => handleDemo('admin')}
               type="button"
-              className="px-3 py-2 bg-white hover:bg-amber-100/50 border border-amber-200 text-amber-900 text-xs font-bold rounded-xl shadow-2xs transition-all active:scale-95 text-left"
+              className="px-3 py-2 bg-white hover:bg-slate-100mber-100/50 border border-amber-200 text-amber-900 text-xs font-bold rounded-xl shadow-2xs transition-all active:scale-95 text-left"
             >
               🛡️ Demo Admin
             </button>

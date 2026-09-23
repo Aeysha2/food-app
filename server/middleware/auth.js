@@ -1,7 +1,5 @@
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'supersecretfoodorderkey_2026_jwt_token';
-
 // Protect routes - verify valid JWT token
 export const requireAuth = (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -13,10 +11,12 @@ export const requireAuth = (req, res, next) => {
   const token = authHeader.split(' ')[1];
 
   try {
-    const decoded = jwt.verify(token, JWT_SECRET);
+    const secret = process.env.JWT_SECRET || 'crave_dash_super_secret_jwt_key_2026';
+    const decoded = jwt.verify(token, secret);
     req.user = decoded;
     next();
   } catch (error) {
+    console.error("JWT Verification failed:", error.message);
     return res.status(403).json({ message: 'Invalid or expired token.' });
   }
 };

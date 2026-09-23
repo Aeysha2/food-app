@@ -55,18 +55,18 @@ export const OrderTrackerModal = ({ isOpen, onClose, orderId }) => {
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 font-sans">
       {/* Backdrop */}
-      <div onClick={onClose} className="fixed inset-0 bg-slate-950/80 backdrop-blur-xs" />
+      <div onClick={onClose} className="fixed inset-0 bg-slate-100/80 backdrop-blur-xs" />
 
-      <div className="relative bg-[#131b2e] rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden border border-slate-800 text-slate-200">
+      <div className="relative bg-slate-50 rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden border border-slate-200 text-slate-800">
         
         {/* Header */}
-        <div className="p-6 bg-[#0f172a] border-b border-slate-800 text-slate-100 flex items-center justify-between">
+        <div className="p-6 bg-white border-b border-slate-200 text-slate-900 flex items-center justify-between">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-red-500">
                 Suivi de Commande en Direct
               </span>
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-whitemerald-400 animate-pulse" />
             </div>
             <h2 className="text-xl font-black mt-0.5 tracking-tight">
               Commande #{order.id}
@@ -76,14 +76,14 @@ export const OrderTrackerModal = ({ isOpen, onClose, orderId }) => {
           <div className="flex items-center gap-2">
             <button
               onClick={fetchOrder}
-              className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors cursor-pointer"
+              className="p-2 rounded-xl bg-slate-50 hover:bg-slate-200 text-slate-700 transition-colors cursor-pointer"
               title="Actualiser le statut"
             >
-              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-amber-400' : ''}`} />
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-red-500' : ''}`} />
             </button>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors cursor-pointer"
+              className="p-2 rounded-xl bg-slate-50 hover:bg-slate-200 text-slate-700 transition-colors cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
@@ -91,16 +91,16 @@ export const OrderTrackerModal = ({ isOpen, onClose, orderId }) => {
         </div>
 
         {/* Estimated Time Card */}
-        <div className="p-5 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+        <div className="p-5 bg-white/90 border-b border-slate-200 flex items-center justify-between">
           <div>
             <span className="text-[11px] text-slate-400 font-semibold block">Délai Estimé</span>
-            <span className="text-xl font-black text-slate-100">
+            <span className="text-xl font-black text-slate-900">
               {order.status === 'Delivered' ? 'Commande Livrée !' : order.estimatedDeliveryTime || '25-35 min'}
             </span>
           </div>
           <div className="text-right">
             <span className="text-[11px] text-slate-400 font-semibold block">Total Commande</span>
-            <span className="text-lg font-black text-amber-400">${order.totalAmount.toFixed(2)}</span>
+            <span className="text-lg font-black text-red-500">${order.totalAmount.toFixed(2)}</span>
           </div>
         </div>
 
@@ -118,7 +118,7 @@ export const OrderTrackerModal = ({ isOpen, onClose, orderId }) => {
                   {idx < STEPS.length - 1 && (
                     <div
                       className={`absolute left-5 top-10 w-0.5 h-12 -ml-px transition-colors ${
-                        idx < activeStep ? 'bg-amber-500' : 'bg-slate-800'
+                        idx < activeStep ? 'bg-red-600' : 'bg-slate-50'
                       }`}
                     />
                   )}
@@ -127,10 +127,10 @@ export const OrderTrackerModal = ({ isOpen, onClose, orderId }) => {
                   <div
                     className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 z-10 transition-all ${
                       isCompleted
-                        ? 'bg-amber-500 text-slate-950 font-black shadow-sm'
+                        ? 'bg-red-600 text-white font-black shadow-sm'
                         : isCurrent
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm'
-                        : 'bg-slate-900 text-slate-500 border border-slate-800'
+                        ? 'bg-red-600/20 text-red-600 border border-red-600/40 shadow-sm'
+                        : 'bg-white text-slate-400 border border-slate-200'
                     }`}
                   >
                     {isCompleted ? <Check className="w-5 h-5 stroke-[2.5]" /> : <Icon className="w-5 h-5" />}
@@ -142,16 +142,16 @@ export const OrderTrackerModal = ({ isOpen, onClose, orderId }) => {
                       <h4
                         className={`text-xs sm:text-sm font-bold ${
                           isCurrent
-                            ? 'text-amber-300'
+                            ? 'text-red-600'
                             : isCompleted
-                            ? 'text-slate-200'
-                            : 'text-slate-500'
+                            ? 'text-slate-800'
+                            : 'text-slate-400'
                         }`}
                       >
                         {step.label}
                       </h4>
                       {isCurrent && (
-                        <span className="text-[9px] font-bold uppercase tracking-wider bg-amber-500/15 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                        <span className="text-[9px] font-bold uppercase tracking-wider bg-red-600/15 text-red-600 border border-red-600/30 px-2 py-0.5 rounded-full">
                           En cours
                         </span>
                       )}
@@ -164,11 +164,11 @@ export const OrderTrackerModal = ({ isOpen, onClose, orderId }) => {
           </div>
 
           {/* Delivery Details */}
-          <div className="p-3.5 bg-slate-900/80 rounded-2xl border border-slate-800 space-y-1.5 text-xs text-slate-300">
+          <div className="p-3.5 bg-slate-100/80 rounded-2xl border border-slate-200 space-y-1.5 text-xs text-slate-700">
             <div className="flex items-start gap-2">
-              <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
               <div>
-                <span className="font-bold text-slate-200 block">Adresse de Livraison :</span>
+                <span className="font-bold text-slate-800 block">Adresse de Livraison :</span>
                 <span className="text-slate-400">{order.deliveryAddress}</span>
               </div>
             </div>
@@ -176,17 +176,17 @@ export const OrderTrackerModal = ({ isOpen, onClose, orderId }) => {
 
           {/* Ordered Dishes Recap */}
           <div>
-            <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+            <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
               Articles Commandés
             </h4>
-            <div className="divide-y divide-slate-800 max-h-36 overflow-y-auto">
+            <div className="divide-y divide-slate-200 max-h-36 overflow-y-auto">
               {order.items.map((it, i) => (
                 <div key={i} className="py-2 flex items-center justify-between text-xs">
-                  <span className="font-medium text-slate-200">
-                    <span className="font-bold text-amber-400 mr-1.5">{it.quantity}x</span>
+                  <span className="font-medium text-slate-800">
+                    <span className="font-bold text-red-500 mr-1.5">{it.quantity}x</span>
                     {it.name}
                   </span>
-                  <span className="font-semibold text-slate-300">
+                  <span className="font-semibold text-slate-700">
                     ${(it.price * it.quantity).toFixed(2)}
                   </span>
                 </div>
@@ -195,13 +195,13 @@ export const OrderTrackerModal = ({ isOpen, onClose, orderId }) => {
           </div>
 
           {/* Simulation / Interactive Step button */}
-          <div className="pt-2 border-t border-slate-800 flex items-center justify-between">
-            <span className="text-[10px] text-slate-500">
+          <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
+            <span className="text-[10px] text-slate-400">
               Mode Démo : Tester la progression
             </span>
             <button
               onClick={handleAdvanceStatus}
-              className="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-colors cursor-pointer border border-slate-700"
+              className="px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-colors cursor-pointer border border-slate-300"
             >
               Étape Suivante ➡️
             </button>

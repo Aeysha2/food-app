@@ -1,4 +1,6 @@
 # 🍕 CraveDash - Full-Stack Food Ordering Platform
+
+> 📁 Ce dépôt contient aussi **[SIGRH – Employee Management System](employee-management/README.md)** (Projet 26), l'application de gestion du personnel du Ministère de la Fonction Publique, dans le dossier `employee-management/`.
 *Project 11: Production-ready Food Ordering & Delivery Web Application*
 
 CraveDash is a modern, full-stack food delivery web application built with **React (Vite)**, **Node.js/Express**, and **Tailwind CSS**. It simulates real-world food ordering platforms like UberEats, DoorDash, and Deliveroo with end-to-end cart management, server-side price protection, real-time order tracking, and administrative controls.

@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'crave_dash_super_secret_jwt_key_2026';
+// Read at call time so it always matches the secret used in middleware/auth.js
+const getJwtSecret = () => process.env.JWT_SECRET || 'crave_dash_super_secret_jwt_key_2026';
 
 export const register = async (req, res) => {
   try {
@@ -28,7 +29,7 @@ export const register = async (req, res) => {
     const safeUser = newUser.toSafeObject();
     const token = jwt.sign(
       { id: safeUser._id, email: safeUser.email, role: safeUser.role, name: safeUser.name },
-      JWT_SECRET,
+      getJwtSecret(),
       { expiresIn: '7d' }
     );
 
@@ -67,7 +68,7 @@ export const login = async (req, res) => {
     const safeUser = user.toSafeObject();
     const token = jwt.sign(
       { id: safeUser._id, email: safeUser.email, role: safeUser.role, name: safeUser.name },
-      JWT_SECRET,
+      getJwtSecret(),
       { expiresIn: '7d' }
     );
 

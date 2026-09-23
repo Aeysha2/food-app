@@ -1,8 +1,8 @@
+// Must be the first import: ES module imports are hoisted, so a dotenv.config()
+// call in the body would run after routes/controllers have already been loaded.
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
-
-dotenv.config(); // MUST BE HERE before importing routes/controllers
 
 import authRoutes from './routes/authRoutes.js';
 import menuRoutes from './routes/menuRoutes.js';
